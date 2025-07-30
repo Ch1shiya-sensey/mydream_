@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Islam | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-bg: #0b0c10;
+      --dark-text: #eaeaea;
+      --light-bg: #f9f9f9;
+      --light-text: #111;
+      --primary: #5a008e;
+      --secondary: #1f1f1f;
+      --overlay: rgba(0, 0, 0, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+      transition: 0.3s ease all;
+    }
+
+    [data-theme="light"] {
+      background-color: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: var(--secondary);
+      z-index: 2;
+      position: relative;
+      flex-wrap: wrap;
+    }
+
+    nav .controls button {
+      margin-left: 10px;
+      background: none;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 8px 18px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    nav .controls button:hover {
+      background: var(--primary);
+      color: #000;
+    }
+
+    header {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 10%;
+      color: white;
+      overflow: hidden;
+    }
+
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    header .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--overlay);
+      z-index: 1;
+    }
+
+    header .content {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      color: var(--primary);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      max-width: 700px;
+      opacity: 0.9;
+    }
+
+    #clock {
+      margin-top: 20px;
+      font-size: 2rem;
+      opacity: 0.9;
+      color: rgb(227, 150, 36);
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    .card {
+      margin-bottom: 60px;
+    }
+
+    .card h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+    }
+
+    .card p {
+      font-size: 1rem;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        padding: 10px 20px;
+      }
+
+      nav .controls {
+        margin-top: 10px;
+      }
+
+      section {
+        padding: 40px 5%;
+      }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <nav>
+    <div><strong>ARISE</strong></div>
+    <div class="controls">
+      <button onclick="toggleTheme()">ALT</button>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('ru')">RU</button>
+    </div>
+  </nav>
+
+  <header>
+    <video autoplay muted loop>
+      <source src="videos/Видео без названия — сделано в Clipchamp.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 id="title"><span style="color:rgb(174, 21, 169);">ENTIRE-LIFE</span></h1>
+      <p id="subtitle"><span style="color: rgba(255, 248, 220, 0.255);">Crafting advanced interfaces & logic — powered by vision and design.</span></p>
+      <div id="clock"></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2 id="about-title">About Me</h2>
+      <p id="about-text"><span style="color: dimgray;">I'm Islam, 18, a front-end developer and a deep learner of crypto & trading. I aim to shape the future by building immersive, meaningful technologies and futuristic digital worlds.</span></p>
+    </div>
+    <div class="card">
+      <h2 id="projects-title">Vision & future</h2>
+      <p id="vision-text"><span style="color:dimgray;">From personal trading dashboards to AI-driven interfaces and Web3 utilities, I focus on clean logic and artistic UI. Every pixel matters. My dream is a universal tech platform made for visionaries.</span></p>
+    </div>
+    <div class="card">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="photos/a_modern_reception_image_.jpg" alt="Project 3">
+        <img src="photos/image.png" alt="Project 5">
+      </div>
+    </div>
+    <div class="card">
+      <h2 id="contact-title">Contact & Social</h2>
+      <div style="color: #475478;">
+        <p>Email: <a href="mailto:chishiyasensey@gmail.com">chishiyasensey@gmail.com</a></p>
+        <p>Telegram: <a href="https://t.me/arisefxc">@arisefx</a></p>
+        <p>Instagram: <a href="https://instagram.com/arise_fxc">@arise_fxc</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">&copy; 2025 Islam. Made with logic + love.</div>
+
+  <div class="container">
+    <div class="arise-text">ARISE</div>
+    <audio id="bg-music" autoplay loop>
+      <source src="The_Stranglers_Golden_Brown_Ending_looped_+_Slowed_Reverb.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        title: "ENTIRE-LIFE",
+        subtitle: "Crafting advanced interfaces & trading blockchain logic — powered by vision and design.",
+        'about-title': "About Me",
+        'about-text': "I'm Islam, 18, a front-end developer and a deep learner of crypto & trading. I aim to shape the future by building immersive, meaningful technologies and futuristic digital worlds.",
+        'projects-title': "Vision & Projects",
+        'vision-text': "From personal trading dashboards to AI-driven interfaces and Web3 utilities, I focus on clean logic and artistic UI. Every pixel matters. My dream is a universal tech platform made for visionaries.",
+        'contact-title': "Contact & Social"
+      },
+      ru: {
+        title: "ENTIRE-LIFE",
+        subtitle: "Создаю продвинутые интерфейсы и изучаю блокчейн-трейдинг — движим визией и дизайном.",
+        'about-title': "Обо мне",
+        'about-text': "Я Ислам, 18 лет, фронтенд-разработчик и изучаю крипту и трейдинг. Моя цель — формировать будущее с помощью технологий и цифровых миров нового поколения.",
+        'projects-title': "Проекты и Видение",
+        'vision-text': "От персональных панелей трейдинга до AI-интерфейсов и Web3-утилит. Каждый пиксель имеет значение. Моя мечта — универсальная технологическая платформа для визионеров.",
+        'contact-title': "Контакты и Соцсети"
+      }
+    };
+
+    function setLang(lang) {
+      Object.entries(translations[lang]).forEach(([id, value]) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = value;
+      });
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      const current = body.getAttribute("data-theme");
+      body.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      document.getElementById("clock").textContent = time;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    window.addEventListener('load', () => {
+      const music = document.getElementById('bg-music');
+      document.body.addEventListener('click', () => {
+        music.volume = 0.5;
+        music.play();
+      }, { once: true });
+    });
+  </script>
+</body>
+</html>
